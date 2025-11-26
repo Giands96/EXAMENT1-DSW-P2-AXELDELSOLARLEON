@@ -1,0 +1,6 @@
+@ExamenT1P2AxelDelSolar_HostAddress = http://localhost:5288
+
+GET {{ExamenT1P2AxelDelSolar_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
