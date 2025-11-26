@@ -2,6 +2,7 @@
 using ExamenT1P2AxelDelSolar.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ExamenT1P2AxelDelSolar.Controllers
 {
@@ -30,19 +31,27 @@ namespace ExamenT1P2AxelDelSolar.Controllers
 
         // d. GET: Obtener cursos por nivel académico
         [HttpGet("por-nivel/{nivelId}")]
-        public async Task<ActionResult<IEnumerable<Curso>>> ListarCursosPorNivel(int nivelId)
+        public async Task<ActionResult<IEnumerable<Curso>>> ListarCursosPorNivel(int nivelId, [FromQuery] int pagina = 1, [FromQuery] int cantidad = 10)
         {
-            var cursosFiltrados = await _context.Cursos
-                                                .Include(c => c.NivelAcademico)
-                                                .Where(c => c.NivelAcademicoId == nivelId)
-                                                .ToListAsync();
 
-            if (cursosFiltrados == null || !cursosFiltrados.Any())
+            if (pagina <= 0) pagina = 1;
+            if (cantidad <= 0) cantidad = 10;
+
+            var queryPagina = _context.Cursos
+                                        .Include(c => c.NivelAcademico)
+                                        .Where(c => c.NivelAcademicoId == nivelId);
+
+            var cursosPaginados = await queryPagina
+                                .Skip((pagina - 1) * cantidad)
+                                .Take(cantidad)
+                                .ToListAsync();
+
+            if (!cursosPaginados.Any())
             {
-                return NotFound($"No se encontraron cursos para el nivel {nivelId}");
+                return NotFound($"No hay cursos en la página {pagina} para el nivel {nivelId}");
             }
 
-            return cursosFiltrados;
+            return cursosPaginados;
         }
 
         // e. POST: Crear un nuevo curso
