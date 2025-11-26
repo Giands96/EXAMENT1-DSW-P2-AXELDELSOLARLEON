@@ -1,0 +1,95 @@
+[
+  {
+    "ContainingType": "ExamenT1P2AxelDelSolar.Controllers.CursosController",
+    "Method": "GetCursos",
+    "RelativePath": "api/Cursos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ExamenT1P2AxelDelSolar.Models.Curso, ExamenT1P2AxelDelSolar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenT1P2AxelDelSolar.Controllers.CursosController",
+    "Method": "PostCurso",
+    "RelativePath": "api/Cursos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "curso",
+        "Type": "ExamenT1P2AxelDelSolar.Models.Curso",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenT1P2AxelDelSolar.Models.Curso",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenT1P2AxelDelSolar.Controllers.CursosController",
+    "Method": "PutCurso",
+    "RelativePath": "api/Cursos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "curso",
+        "Type": "ExamenT1P2AxelDelSolar.Models.Curso",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenT1P2AxelDelSolar.Controllers.CursosController",
+    "Method": "ListarCursosPorNivel",
+    "RelativePath": "api/Cursos/por-nivel/{nivelId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nivelId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ExamenT1P2AxelDelSolar.Models.Curso, ExamenT1P2AxelDelSolar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
