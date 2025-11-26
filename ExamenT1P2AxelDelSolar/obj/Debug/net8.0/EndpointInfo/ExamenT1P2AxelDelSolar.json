@@ -204,7 +204,8 @@
       "Curso": {
         "required": [
           "codigoCurso",
-          "creditos"
+          "creditos",
+          "nombreCurso"
         ],
         "type": "object",
         "properties": {
@@ -214,6 +215,10 @@
           },
           "codigoCurso": {
             "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "nombreCurso": {
             "minLength": 1,
             "type": "string"
           },

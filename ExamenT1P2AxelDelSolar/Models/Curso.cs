@@ -17,6 +17,10 @@ namespace ExamenT1P2AxelDelSolar.Models
         public String CodigoCurso { get; set; } = string.Empty;
 
         [Required]
+        [Column("nombre_curso")]
+        public string NombreCurso { get; set; } = string.Empty;
+
+        [Required]
         [Column("creditos")]
         public int Creditos { get; set; }
 

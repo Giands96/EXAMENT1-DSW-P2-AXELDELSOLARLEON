@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExamenT1P2AxelDelSolar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee9faad043f833f3e57de06c5a442562fec19d0b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+748c03abf885932ae4093673680576a890f55f07")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExamenT1P2AxelDelSolar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExamenT1P2AxelDelSolar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
